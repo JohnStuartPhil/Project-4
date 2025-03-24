@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from add_bands.views import my_bands
+#from add_bands.views import my_bands
 
 urlpatterns = [
-    path('bands/', my_bands, name='bands'),
+    #path('bands/', my_bands, name='bands'),
     path('admin/', admin.site.urls),
+    path("", include("add_bands.urls"), name="add_bands-urls"),
     
 ]
