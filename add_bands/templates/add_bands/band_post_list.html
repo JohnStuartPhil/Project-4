@@ -10,10 +10,10 @@
 
 <body>
     <h1>Band Reviews list</h1>
-    {% for post in object_list %}
-    <h2>{{post.title}}</h2>
-    <p>{{post.excerpt}}</p>
-    <p>Author: {{post.author}}</p>
+    {% for band in object_list %}
+    <h2>{{band_post.title}}</h2>
+    <p>{{band_post.excerpt}}</p>
+    <p>Author: {{band_post.author}}</p>
     {% endfor %}
 </body>
 
