@@ -11,9 +11,10 @@
 <body>
     <h1>Band Reviews list</h1>
     {% for band in object_list %}
-    <h2>{{band_post.name_of_band}}</h2>
-    <p>{{band_post.excerpt}}</p>
-    <p>Author: {{band_post.author}}</p>
+    <h2>Band: {{Band_Post.name_of_band}}</h2>
+    <!--<p>{{band_post.excerpt}}</p>-->
+    <p>Genre: {{Band_Post.genre}}</p>
+    <p>Author: {{Band_Post.author}}</p>
     {% endfor %}
 </body>
 
