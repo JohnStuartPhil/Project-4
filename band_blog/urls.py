@@ -21,5 +21,6 @@ from django.urls import path, include
 urlpatterns = [
     #path('bands/', my_bands, name='bands'),
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
     path('', include("add_bands.urls"), name="add_bands-urls"),
 ]
