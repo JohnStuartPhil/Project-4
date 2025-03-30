@@ -10,13 +10,13 @@
 
 <body>
     <h1>Band Reviews list</h1>
-    {% for Band_Post in band_post_list %}
-    <h2>Band: {{Band_Post.name_of_band}}</h2>
-    <!--<p>{{band_post.excerpt}}</p>-->
-    <p>Genre: {{Band_Post.genre}}</p>
-    <p>Marks out of 5: {{Band_Post.marks_out_of_five }}</p>
-    <p>Review: {{Band_Post.band_review}}</p>
-    <p>Author: {{Band_Post.author}}</p>
+    {% for BandPost in bandpost_list %}
+    <h2>Band: {{BandPost.name_of_band}}</h2>
+    <!--<p>{{bandpost.excerpt}}</p>-->
+    <p>Genre: {{BandPost.genre}}</p>
+    <p>Marks out of 5: {{BandPost.marks_out_of_five }}</p>
+    <p>Review: {{BandPost.band_review}}</p>
+    <p>Author: {{BandPost.author}}</p>
     {% endfor %}
 </body>
 
