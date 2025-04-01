@@ -19,7 +19,7 @@ from django.urls import path, include
 #from add_bands.views import my_bands
 
 urlpatterns = [
-    #path('bands/', my_bands, name='bands'),
+    #path('', my_bands, name='bands'),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path('', include("add_bands.urls"), name="add_bands-urls"),

@@ -9,11 +9,13 @@ from .models import BandPost
     #return HttpResponse("Hello project 4 for Heroku")
 class BandPostList(generic.ListView):
     queryset = BandPost.objects.filter(status=1)
+    template_name = "add_bands/index.html"
+    paginate_by = 6
     #model = Band_Post
-    #queryset = Band_Post.objects.filter(status=1)
-    #template_name = "band_post_list.html"
+    #template_name = "bandpost_list.html"
 
 #class OpionionList(generic.ListView):
     #model = Opinion
     #queryset = Opinion.objects.filter(status=1)
-    #template_name = "band_post_list.html"
+    #template_name = "bandpost_list.html"
+
