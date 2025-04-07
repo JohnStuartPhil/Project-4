@@ -2,13 +2,28 @@
 
 {% block content %}
 
-<div>TEST</div>
-<!-- index.html content starts here 
+<!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
 
-        Blog Entries Column 
+        <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
+            <h1 id="test">Band Reviews list</h1>
+        {% for BandPost in bandpost_list %}
+        <h2>Band: {{BandPost.name_of_band}}</h2>
+        <p>Genre: {{BandPost.genre}}</p>
+        <p>Marks out of 5: {{BandPost.marks_out_of_five }}</p>
+        <p>Review: {{BandPost.band_review}}</p>
+        <p>Author: {{BandPost.author}}</p>
+        {% endfor %}
+
+        {% for Opinion in bandpost_list %}
+        <h2>Band: {{Opinion.name_of_band}}</h2>
+        <p>Marks out of 5: {{Opinion.marks_out_of_five }}</p>
+        <p>Your thoughts: {{Opinion.your_thoughts}}</p>
+        <p>Author: {{Opinion.author}}</p>
+        {% endfor %}
+    
             <div class="row">
                 {% for post in post_list %}
                 <div class="col-md-4">
@@ -49,5 +64,5 @@
     {% endif %}
 </div>
 
- index.html content ends here-->
+<!-- index.html content ends here -->
 {% endblock %}
