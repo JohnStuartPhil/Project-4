@@ -4,12 +4,14 @@ from django.core.validators import MinValueValidator
 from django.core.validators import MaxValueValidator
 
 STATUS = ((0, "Draft"), (1, "Published"))
-GENRE_CHOICES = (('genre', 'GENRE'), ('pop', 'POP'),('rock', 'ROCK'),('blues', 'BLUES'),('jazz', 'JAZZ'),('other', 'OTHER'),)
+GENRE_CHOICES = (('Genre', 'GENRE'), ('Pop', 'POP'),('Rock', 'ROCK'),('Blues', 'BLUES'),('Jazz', 'JAZZ'),('Other', 'OTHER'),)
+VENUE_CHOICES = (('Venue', 'VENUE'), ('Pub/Small Venue', 'PUB/SMALL VENUE'), ('Club', 'CLUB'), ('Arena', 'ARENA'), ('Stadium', 'STADIUM'))
 
 # Create your models here.
 class BandPost(models.Model):
     name_of_band = models.CharField(max_length=25, unique=False)
     genre = models.CharField(max_length=6, choices=GENRE_CHOICES, default='genre', unique=False)
+    size_of_venue_played = models.CharField(max_length=20, choices=VENUE_CHOICES, default='venue', unique=False)
     number_of_members = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(7)], unique=False)
     marks_out_of_five = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)], unique=False)
     band_review = models.TextField(unique=False)
@@ -17,6 +19,7 @@ class BandPost(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    #approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["-created_on"]
