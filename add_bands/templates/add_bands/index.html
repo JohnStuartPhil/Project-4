@@ -2,6 +2,9 @@
 
 {% block content %}
 
+
+
+
 <!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
@@ -14,19 +17,25 @@
         <p>Genre: {{BandPost.genre}}</p>
         <p>Venue: {{BandPost.size_of_venue_played}}</p>
         <p>Number of members: {{BandPost.number_of_members}}</p>
-        <p>Marks out of 5: {{BandPost.marks_out_of_five }}</p>
+        <p>Marks out of 5: {{BandPost.marks_out_of_five}}</p>
         <p>Review: {{BandPost.band_review}}</p>
         <p>Author: {{BandPost.author}}</p>
         {% endfor %}
 
+        
+
+       
+
+
+        <!-- 
         {% for Opinion in bandpost_list %}
         <h2>Band: {{Opinion.name_of_band}}</h2>
         <p>Marks out of 5: {{Opinion.marks_out_of_five }}</p>
         <p>Your thoughts: {{Opinion.your_thoughts}}</p>
         <p>Author: {{Opinion.author}}</p>
-        {% endfor %}
+        {% endfor %}-->
     
-            <div class="row">
+            <!--<div class="row">
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
@@ -64,7 +73,10 @@
         </ul>
     </nav>
     {% endif %}
-</div>
+</div>-->
 
 <!-- index.html content ends here -->
 {% endblock %}
+
+
+

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BandPost, Opinion
+from .models import BandPost #,Opinion
 #from django_summernote.admin import SummernoteModelAdmin
 
 #@admin.register(BandPost)
@@ -13,4 +13,4 @@ from .models import BandPost, Opinion
 
 # Register your models here.
 admin.site.register(BandPost)
-admin.site.register(Opinion)
+#admin.site.register(Opinion)
