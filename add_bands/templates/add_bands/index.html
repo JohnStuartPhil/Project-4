@@ -4,79 +4,122 @@
 
 
 
+<!--adding band posts-->
 
-<!-- index.html content starts here -->
-<div class="container-fluid">
-    <div class="row">
 
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <h1 id="test">Band Reviews list</h1>
-        {% for BandPost in bandpost_list %}
-        <h2>Band: {{BandPost.name_of_band}}</h2>
-        <p>Genre: {{BandPost.genre}}</p>
-        <p>Venue: {{BandPost.size_of_venue_played}}</p>
-        <p>Number of members: {{BandPost.number_of_members}}</p>
-        <p>Marks out of 5: {{BandPost.marks_out_of_five}}</p>
-        <p>Review: {{BandPost.band_review}}</p>
-        <p>Author: {{BandPost.author}}</p>
-        {% endfor %}
+
+
+
+<form action="." method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">SUBMIT</button>
+</form>
+
+
+
+
+
+<!--display Band Posts-->
+<h1>Band Posts</h1>
+{% for BandPost in bandpost_list %}
+<h2>Band: {{BandPost.name_of_band}}</h2>
+<p>Genre: {{BandPost.genre}}</p>
+<p>Venue: {{BandPost.size_of_venue_played}}</p>
+<p>Number of members: {{BandPost.number_of_members}}</p>
+<p>Marks out of 5: {{BandPost.marks_out_of_five}}</p>
+<p>Review:</p>
+<p>{{BandPost.band_review}}</p>
+<p>Author: {{BandPost.author}}</p>
+<p>Updated on: {{BandPost.updated_on}}</p>
+<p>Created on: {{BandPost.created_on}}</p>
+        
+{% endfor %} 
 
         
-
-       
-
-
-        <!-- 
-        {% for Opinion in bandpost_list %}
-        <h2>Band: {{Opinion.name_of_band}}</h2>
-        <p>Marks out of 5: {{Opinion.marks_out_of_five }}</p>
-        <p>Your thoughts: {{Opinion.your_thoughts}}</p>
-        <p>Author: {{Opinion.author}}</p>
-        {% endfor %}-->
-    
-            <!--<div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
-                            </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                            </a>
-
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
-            </div>
-        </div>
-    </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>-->
-
-<!-- index.html content ends here -->
 {% endblock %}
 
 
 
+<!--Sign Up form - from the Coders Cafe tutorial and edited accordingly-->
+<!--<section id="signup">
+  <form method="POST">
+      <h2>Bandblog</h2>
+      <h3>Tell us about the band you saw:</h3>
+      <div>
+          <div>
+              <label for="band-name-field">Name of Band:</label>
+              <br>
+              <input required id="band-name-field" type="text" name="name_of_band"
+                  placeholder="Name of band">
+          </div>
+      </div>
+      <br>
+      <div>
+          <label for="genre">Genre:</label>
+          <br>
+          <select required id="genre" name="genre">
+              <option value="">Please select</option>
+              
+              <option value="pop">Pop</option>
+              <option value="rock">Rock</option>
+              <option value="blues">Blues</option>
+              <option value="jazz">Jazz</option>
+              <option value="other">Other</option>
+          </select>
+      </div>
+      <br>
+      <div>
+          <label for="venue">Size of venue palyed:</label>
+          <br>
+          <select required id="venue" name="venue">
+              <option value="">Please select</option>
+              
+              <option value="pub">Pub</option>
+              <option value="club">Club</option>
+              <option value="arena">Arena</option>
+              <option value="stadium">Stadium</option>
+          </select>
+      </div>
+      <br>
+      <div>
+        <label for="number-of-members">Number of members:</label>
+        <br>
+        <select required id="number-of-members" name="number-of-members">
+            <option value="">Please select</option>
+        </select>
+        
+    </div>
+    <br>
+    <div>
+        <label for="marks-out-of-5">Marks out of 5:</label>
+        <br>
+        <select required id="marks-out-of-5" name="marks-out-of-5">
+            <option value="">Please select</option>
+        </select>
+        
+    </div>
+    <br>
+
+
+      <div>
+          <fieldset>
+              <legend></legend>
+              <label for="band-review">Band review</label>
+              <br>
+              <textarea id="band-review" rows="4" cols="100" name="band-review"
+                  placeholder="Tell us about this band" required></textarea>
+                  
+
+                  
+          </fieldset>
+      </div>
+      <br>
+      <div id=buttons>
+          <button type="submit">
+              <strong>Submit</strong>
+          </button>
+          <input type="reset" value="Reset Form">
+      </div>
+  </form>
+</section>-->
